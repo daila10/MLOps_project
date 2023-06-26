@@ -1,0 +1,70 @@
+# Here you can define all your data sets by using simple YAML syntax.
+
+drift_test:
+  type: pandas.CSVDataSet
+  filepath: data/00_drift/drift_test.csv
+  layer: drift_test
+
+raw_data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/predictive_maintenance.csv
+  layer: raw
+
+cleaned_data:
+  type: pandas.CSVDataSet
+  filepath: data/02_clean/clean_data.csv
+  layer: clean
+
+engineered_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_engineered/engineered_data.csv
+  layer: engineered
+
+X_train:
+  type: pandas.CSVDataSet
+  filepath: data/04_model_input/X_train.csv
+  layer: model_input
+
+y_train:
+  type: pandas.CSVDataSet
+  filepath: data/04_model_input/y_train.csv
+  layer: model_input
+
+X_test:
+  type: pandas.CSVDataSet
+  filepath: data/04_model_input/X_test.csv
+  layer: model_input
+
+y_test:
+  type: pandas.CSVDataSet
+  filepath: data/04_model_input/y_test.csv
+  layer: model_input
+
+y_pred:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_output/y_pred.csv
+  layer: model_output
+
+trained_rf:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: pickle.PickleDataSet
+    filepath: data/05_models/trained_rf.pkl
+    backend: pickle
+
+rf_AUC_plot:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: matplotlib.MatplotlibWriter
+    filepath: data/07_reporting/rf_AUC_plot.png
+
+drift_result:
+  type: pandas.CSVDataSet
+  filepath: data/07_reporting/drift_result.csv
+
+metrics:
+  type: tracking.MetricsDataSet
+  filepath: data/08_tracking/metrics.json
+
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
