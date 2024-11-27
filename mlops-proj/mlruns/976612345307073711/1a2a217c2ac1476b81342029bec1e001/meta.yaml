@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/LuisFernandes/mlops-project/mlruns/976612345307073711/1a2a217c2ac1476b81342029bec1e001/artifacts
+end_time: 1687705984154
+entry_point_name: ''
+experiment_id: '976612345307073711'
+lifecycle_stage: active
+run_id: 1a2a217c2ac1476b81342029bec1e001
+run_name: __default__
+run_uuid: 1a2a217c2ac1476b81342029bec1e001
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1687705983473
+status: 4
+tags: []
+user_id: LuisFernandes
